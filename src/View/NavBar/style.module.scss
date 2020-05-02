@@ -1,0 +1,89 @@
+@import '../../Style/config/colors.scss';
+@import '../../Style/functions/index.scss';
+
+// Container
+
+.container {
+  display: flex;
+  user-select: none;
+
+  .sub-nav {
+    display: none;
+  }
+
+  > .right {
+    min-height: 100vh;
+    @include w(calc(100vw - 70px));
+  }
+}
+
+// Nav Bar
+
+.nav {
+  @include hw(100vh, 70px);
+  @include shadowRight;
+  display: flex;
+  position: sticky;
+  top: 0;
+
+  background-color: $yellow4;
+}
+
+.ul {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  > li {
+    @include flexCenter;
+
+    height: 16%;
+    cursor: pointer;
+  }
+}
+
+.logo {
+  > img {
+    max-width: 90px;
+    transform: rotate(315deg);
+  }
+}
+
+.icon {
+  font-size: 4rem;
+  color: $grey1;
+
+  &:hover, &.active {
+    &:not(.blocked) {
+      background-color: $yellow2;
+      @include shadowRight;
+    }
+  }
+
+  &.blocked {
+    @include shadowRight;
+    cursor: not-allowed;
+    background-image:
+    repeating-linear-gradient(
+      135deg,
+      transparentize($grey2, 0.2),
+      transparentize($grey2, 0.2) 10px,
+      transparentize($grey1, 0.6) 10px,
+      transparentize($grey1, 0.6) 20px
+    );
+  }
+}
+
+[data-theme="dark"] {
+  .right {
+    background-color: $grey3;
+  }
+}
+
+[data-theme="light"] {
+  .right {
+    background-color: $white2;
+  }
+}

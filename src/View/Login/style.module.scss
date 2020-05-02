@@ -1,0 +1,47 @@
+@import '../../Style/config/colors.scss';
+@import '../../Style/functions';
+
+
+.container {
+  @include flexCenter;
+  @include hw(100vh, 100%);
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
+  padding: 2em 0;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20px;
+  @include hw(90vh, 500px);
+}
+
+.header {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.inputs {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.buttons {
+  width: 95%;
+  display: flex;
+  justify-content: space-around;
+}
+
+[data-theme="dark"] {
+  .form {
+    background-color: $grey1;
+  }
+
+  .header {
+    color: $white1;
+  }
+}

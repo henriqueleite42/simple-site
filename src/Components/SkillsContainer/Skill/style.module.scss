@@ -1,0 +1,33 @@
+@import "../../../Style/functions";
+@import "../../../Style/config/colors.scss";
+
+@mixin color ($skill, $color) {
+  [data-theme="dark"] {
+    .skill[data-skill="#{$skill}"] {
+      color: $color;
+      border: 2px solid $color;
+    }
+  }
+
+  [data-theme="light"] {
+    .skill[data-skill="#{$skill}"] {
+      background-color: $color;
+      color: $grey1;
+    }
+  }
+}
+
+.skill {
+  @include flexCenter;
+
+  border-radius: 10px;
+  border: 2px solid $white2;
+  font-size: 0.7em;
+  padding: 0.7rem;
+  font-weight: bold;
+}
+
+
+@include color(blue1, $blue1);
+@include color(yellow4, $yellow4);
+@include color(green1, $green1);

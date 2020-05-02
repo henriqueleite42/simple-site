@@ -1,0 +1,36 @@
+@import "../../Style/config/colors.scss";
+@import "../../Style/functions/flex.scss";
+
+.container {
+  @include flexCenter;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+[data-round="true"] {
+  border-radius: 30px;
+}
+
+[data-padding="tiny"] {
+  padding: 1.2rem;
+}
+[data-padding="normal"] {
+  padding: 1em;
+}
+
+[data-theme="dark"] {
+  .container[data-type="primary"] {
+    background-color: $yellow4;
+
+    &:hover {
+      background-color: $yellow2;
+    }
+  }
+  .container[data-type="secondary"] {
+    background-color: $white2;
+
+    &:hover {
+      background-color: $white3;
+    }
+  }
+}

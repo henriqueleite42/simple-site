@@ -1,0 +1,48 @@
+@import '../../../Style/functions';
+@import '../../../Style/config/colors.scss';
+
+.container {
+  min-height: 250px;
+  @include w(100%);
+  box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.2);
+  border-radius: 20px;
+  padding: 1.2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.header {
+  @include flexBet;
+}
+
+.title {
+  font-size: 1.5em;
+  font-weight: bold;
+  padding-right: 1em;
+}
+
+.body {
+  padding: 1em 0;
+
+  > p {
+    white-space: pre-line;
+  }
+}
+
+[data-theme="dark"] {
+  .title {
+    color: $yellow3;
+  }
+}
+
+[data-theme="light"] {
+  .title {
+    color: $grey2;
+  }
+
+  .body {
+    color: $grey2;
+  }
+}

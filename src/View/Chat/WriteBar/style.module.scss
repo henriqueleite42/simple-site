@@ -1,0 +1,57 @@
+@import "../../../Style/config/colors.scss";
+@import "../../../Style/functions";
+
+.write-bar {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  height: 50px;
+  margin: 1em;
+  user-select: none;
+
+  > div {
+    margin-right: 1em;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.button {
+  @include flexCenter;
+  @include hw(50px, 50px);
+
+  border-radius: 50%;
+  box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.2);
+  cursor: pointer;
+
+  &:last-child svg {
+    margin-left: -5px;
+  }
+}
+
+[data-theme="dark"] {
+  .button {
+    background-color: $yellow4;
+    color: $grey1;
+
+    &:hover {
+      background-color: $yellow2;
+    }
+  }
+}
+
+[data-theme="light"] {
+  .button {
+    background-color: $grey2;
+    color: $white2;
+
+    &:hover {
+      background-color: $grey4;
+    }
+  }
+}
+

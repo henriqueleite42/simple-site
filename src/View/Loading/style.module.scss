@@ -1,0 +1,8 @@
+@import "../../Style/functions";
+@import "../../Style/config/colors.scss";
+
+.container {
+  @include fullScreen;
+  @include flexCenter;
+  background-color: $grey2;
+}

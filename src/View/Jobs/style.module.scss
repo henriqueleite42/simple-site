@@ -1,0 +1,23 @@
+@import "../../Style/functions";
+
+@include right;
+
+.cards > div {
+  margin-bottom: 1.5em;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+[data-theme="dark"] {
+  .container {
+    color: white !important;
+  }
+}
+
+[data-theme="light"] {
+  .container {
+    color: black;
+  }
+}

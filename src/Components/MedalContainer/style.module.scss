@@ -1,0 +1,15 @@
+@import "../../Style/functions";
+@import "../../Style/config/colors.scss";
+
+.medals {
+  display: flex;
+  justify-content: flex-end;
+
+  > div {
+    margin-right: 1em;
+
+    &:last-child {
+     margin-right: 0;
+    }
+  }
+}

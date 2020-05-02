@@ -1,0 +1,62 @@
+@import "../../Style/config/colors.scss";
+@import "../../Style/functions";
+
+@include right;
+
+.container {
+  display: flex;
+  padding: 0;
+  font-weight: bold;
+
+  > div:last-child {
+    @include w(80%);
+  }
+}
+
+.left {
+  @include w(20%);
+  @include shadowRight;
+}
+
+.tab-item {
+  padding: 1em;
+  display: flex;
+  cursor: pointer;
+}
+
+[data-theme="dark"] {
+  .container > div:last-child {
+
+    > div {
+      border-bottom: 1px solid $white2;
+
+      &:hover {
+        background-color: $grey2;
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  .left {
+    background-color: $grey2;
+
+    > div {
+      border-bottom: 1px solid $white2;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  .tab-item {
+    color: $white2;
+
+    &:hover {
+      background-color: $grey4;
+    }
+  }
+}

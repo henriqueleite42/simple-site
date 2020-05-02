@@ -1,0 +1,44 @@
+@import '../../Style/config/colors.scss';
+@import '../../Style/functions';
+
+
+.container {
+  position: absolute;
+  right: 40px;
+  top: 22px;
+  display: none;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-direction: column;
+  z-index: 100;
+  padding: 1em;
+  border: 5px solid $yellow4;
+  border-radius: 20px;
+  box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.5);
+  @include hw(250px, 450px);
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  > span {
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+[data-theme="dark"] {
+  .container {
+    background-color: $grey1;
+  }
+
+  .buttons > span {
+    color: $white2;
+  }
+}

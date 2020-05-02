@@ -1,0 +1,59 @@
+@import '../../Style/config/colors.scss';
+@import '../../Style/functions';
+
+.container {
+  > span {
+    margin-left: 1rem;
+    font-weight: bold;
+  }
+
+  &[data-label="true"] {
+    padding: 1.2rem;
+
+    .input {
+      margin-top: 1.2rem;
+    }
+  }
+}
+
+.input {
+  @include h(50px);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 50px;
+  box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.2);
+  padding: 1rem 2rem;
+  cursor: text;
+
+  > span {
+    font-size: 1.5rem;
+  }
+
+  > input {
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    font-size: 2rem;
+
+    &:focus::placeholder {
+      color: transparent;
+    }
+  }
+
+  > svg {
+    cursor: pointer;
+  }
+}
+
+[data-theme="dark"] {
+  .container {
+    color: $white1;
+  }
+
+  .input {
+    > svg, > input {
+      color: $white2;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+@import "../../../Style/config/colors.scss";
+@import "../../../Style/functions";
+
+.item {
+  @include flexBet;
+  padding: 1.5rem;
+}
+
+[data-theme="dark"] {
+  .item {
+    color: $white2;
+  }
+}

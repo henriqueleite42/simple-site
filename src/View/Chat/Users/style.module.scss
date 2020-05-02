@@ -1,0 +1,31 @@
+@import "../../../Style/functions";
+
+.container {
+  display: flex;
+  @include hw(100vh, 100%);
+}
+
+.left {
+  @include w(20%);
+  @include shadowRight;
+}
+
+.right {
+  @include w(80%);
+}
+
+[data-theme="dark"] {
+  .container {
+    color: white !important;
+  }
+
+  .left {
+    background-color: $grey2;
+  }
+}
+
+[data-theme="light"] {
+  .container {
+    color: black;
+  }
+}

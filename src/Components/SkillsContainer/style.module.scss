@@ -1,0 +1,15 @@
+@import "../../Style/functions";
+@import "../../Style/config/colors.scss";
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+
+  > div {
+    margin-right: 1rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

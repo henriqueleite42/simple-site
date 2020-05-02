@@ -1,0 +1,19 @@
+@import "../../../Style/functions";
+@import "../../../Style/config/colors.scss";
+
+.container {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  box-shadow: inset 0px -5px 5px 0px rgba(0,0,0,0.1);
+  @include hw(calc(100vh - 50px - 2em), 100%);
+
+  > div {
+    &:first-child {
+      padding-top: 1em;
+    }
+    &:last-child {
+      padding-bottom: 1em;
+    }
+  }
+}
+@include scroll(container);

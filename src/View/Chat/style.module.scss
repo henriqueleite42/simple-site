@@ -1,0 +1,46 @@
+@import "../../Style/functions";
+
+.container {
+  display: flex;
+  @include hw(100vh, 100%);
+}
+
+.left {
+  @include shadowRight;
+  min-width: 20%;
+  max-width: 20%;
+  display: flex;
+  transition: all 0.5s;
+}
+
+.right {
+  width: 100%;
+}
+
+.not-selected {
+  @include flexCenter;
+  @include hw(100%, 100%);
+
+  font-weight: bold;
+  font-size: 2em;
+}
+
+[data-theme="dark"] {
+  .container {
+    color: white !important;
+  }
+
+  .not-selected {
+    color: $white2;
+  }
+
+  .left {
+    background-color: $grey2;
+  }
+}
+
+[data-theme="light"] {
+  .container {
+    color: black;
+  }
+}

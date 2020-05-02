@@ -1,0 +1,49 @@
+@import '../../../Style/config/colors.scss';
+@import '../../../Style/functions';
+
+.radio-choice-container {
+  @include flexCenter;
+  width: 100%;
+  flex-direction: column;
+}
+
+.radio-choice {
+  @include h(50px);
+  display: flex;
+  border-radius: 50px;
+  box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.2);
+
+  > div {
+    @include flexCenter;
+    width: 50%;
+    height: 100%;
+    cursor: pointer;
+
+    &:first-child {
+      border-top-left-radius: 50px;
+      border-bottom-left-radius: 50px;
+    }
+
+    &:last-child {
+      border-top-right-radius: 50px;
+      border-bottom-right-radius: 50px;
+    }
+
+    > span {
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+}
+
+
+[data-theme="dark"] {
+  .radio-choice > div {
+    color: $white1;
+
+    &:hover, &[data-selected="true"] {
+      color: $black;
+      background-color: $yellow4;
+    }
+  }
+}
